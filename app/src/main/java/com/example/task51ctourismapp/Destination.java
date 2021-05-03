@@ -1,11 +1,11 @@
 package com.example.task51ctourismapp;
 
-public class destination {
+public class Destination {
     public String imageRes;
     public String header;
     public String desc;
 
-    public destination(String imageRes, String header, String desc){
+    public Destination(String imageRes, String header, String desc){
         this.imageRes = imageRes;
         this.header = header;
         this.desc = desc;
