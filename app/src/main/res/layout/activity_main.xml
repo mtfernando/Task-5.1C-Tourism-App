@@ -37,8 +37,9 @@
         android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/verticalRecyclerView"
         android:layout_width="409dp"
         android:layout_height="382dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +17,11 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
     private List<Destination> destinationList;
     private Context context;
 
+    public VerticalRecyclerViewAdapter(List<Destination> destinationList, Context context) {
+        this.destinationList = destinationList;
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public VerticalRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,12 +31,14 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
 
     @Override
     public void onBindViewHolder(@NonNull VerticalRecyclerViewAdapter.ViewHolder holder, int position) {
-
+        holder.destinationHeader.setText(destinationList.get(position).getHeader());
+        holder.destinationDesc.setText(destinationList.get(position).getDesc());
+        holder.destinationImage.setImageResource(context.getResources().getIdentifier("drawable/" + destinationList.get(position).getImageRes(), null, context.getPackageName()));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return destinationList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
