@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView verticalRecyclerView;
+    RecyclerView verticalRecyclerView, horizontalRecyclerView;
     VerticalRecyclerViewAdapter verticalRecyclerViewAdapter;
+    HorizontalRecyclerViewAdapter horizontalRecyclerViewAdapter;
     List<Destination> destinationList = new ArrayList<>();
 
     String[] destinationNameList = {"Melbourne","Brisbane","Tokyo","London", "Colombo", "New York"};
@@ -43,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(destination.getHeader().toString());
         };
 
+        //Setting up the Horizontal RecyclerView
+        horizontalRecyclerView = findViewById(R.id.horizontalRecyclerView);
+        horizontalRecyclerViewAdapter = new HorizontalRecyclerViewAdapter(destinationList, this);
+        horizontalRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        horizontalRecyclerView.setAdapter(horizontalRecyclerViewAdapter);
+
+        //setting up the Vertical RecyclerView
         verticalRecyclerView = findViewById(R.id.verticalRecyclerView);
         verticalRecyclerViewAdapter = new VerticalRecyclerViewAdapter(destinationList,this);
         verticalRecyclerView.setLayoutManager(new LinearLayoutManager(this));
