@@ -44,7 +44,6 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment;
                 Destination destinationObject;
 
                 //The destination object that is selected.
