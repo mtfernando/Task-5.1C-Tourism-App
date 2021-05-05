@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    public static String PACKAGE_NAME;
     RecyclerView verticalRecyclerView, horizontalRecyclerView;
     VerticalRecyclerViewAdapter verticalRecyclerViewAdapter;
     HorizontalRecyclerViewAdapter horizontalRecyclerViewAdapter;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PACKAGE_NAME = getApplicationContext().getPackageName();
 
         for(int i=0; i<destinationNameList.length; i++){
             Destination destination = new Destination(imageResStringList[i], destinationNameList[i], destinationDescriptionList[i]);

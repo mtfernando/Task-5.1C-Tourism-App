@@ -1,6 +1,9 @@
 package com.example.task51ctourismapp;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.sql.RowId;
 import java.util.List;
 
 public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRecyclerViewAdapter.ViewHolder> {
@@ -34,6 +40,35 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
         holder.destinationHeader.setText(destinationList.get(position).getHeader());
         holder.destinationDesc.setText(destinationList.get(position).getDesc());
         holder.destinationImage.setImageResource(context.getResources().getIdentifier("drawable/" + destinationList.get(position).getImageRes(), null, context.getPackageName()));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment;
+                Destination destinationObject;
+
+                //The destination object that is selected.
+                destinationObject = destinationList.get(holder.getAdapterPosition());
+
+                AppCompatActivity activity = (AppCompatActivity) context;
+                Intent destinationIntent  = new Intent(context, DestinationFragment.class);
+                DestinationFragment destinationFragment = new DestinationFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("image", destinationObject.getImageRes());
+                bundle.putString("header", destinationObject.getHeader());
+                bundle.putString("desc", destinationObject.getDesc());
+
+                destinationIntent.putExtras(bundle);
+
+                destinationFragment.setArguments(bundle);
+
+                //Begin fragment
+                activity.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.activtyFragment, destinationFragment)
+                        .addToBackStack(null).commit();
+                }
+
+        });
     }
 
     @Override
