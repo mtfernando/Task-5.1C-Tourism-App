@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     List<Destination> destinationList = new ArrayList<>();
 
     String[] destinationNameList = {"Melbourne","Brisbane","Tokyo","London", "Colombo", "New York"};
+
     String[] destinationDescriptionList = {
             "Visit Melbourne now!",
             "Visit Brisbane now!",
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             "Visit Colombo now!",
             "Visit New York now!"
     };
+
     String[] imageResStringList = {
             "melbourne",
             "brisbane",
@@ -38,22 +40,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for(int i=0; i<destinationNameList.length; i++){
-            Destination destination = new Destination(imageResStringList[i], destinationNameList[i], destinationDescriptionList[i]);
-            destinationList.add(destination);
-            System.out.println(destination.getHeader().toString());
-        };
-
-        //Setting up the Horizontal RecyclerView
-        horizontalRecyclerView = findViewById(R.id.horizontalRecyclerView);
-        horizontalRecyclerViewAdapter = new HorizontalRecyclerViewAdapter(destinationList, this);
-        horizontalRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        horizontalRecyclerView.setAdapter(horizontalRecyclerViewAdapter);
-
-        //setting up the Vertical RecyclerView
-        verticalRecyclerView = findViewById(R.id.verticalRecyclerView);
-        verticalRecyclerViewAdapter = new VerticalRecyclerViewAdapter(destinationList,this);
-        verticalRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        verticalRecyclerView.setAdapter(verticalRecyclerViewAdapter);
+//        for(int i=0; i<destinationNameList.length; i++){
+//            Destination destination = new Destination(imageResStringList[i], destinationNameList[i], destinationDescriptionList[i]);
+//            destinationList.add(destination);
+//            System.out.println(destination.getHeader().toString());
+//        };
+//
+//        //Setting up the Horizontal RecyclerView
+//        horizontalRecyclerView = findViewById(R.id.horizontalRecyclerView);
+//        horizontalRecyclerViewAdapter = new HorizontalRecyclerViewAdapter(destinationList, this);
+//        horizontalRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+//        horizontalRecyclerView.setAdapter(horizontalRecyclerViewAdapter);
+//
+//        //setting up the Vertical RecyclerView
+//        verticalRecyclerView = findViewById(R.id.verticalRecyclerView);
+//        verticalRecyclerViewAdapter = new VerticalRecyclerViewAdapter(destinationList,this);
+//        verticalRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        verticalRecyclerView.setAdapter(verticalRecyclerViewAdapter);
     }
 }
