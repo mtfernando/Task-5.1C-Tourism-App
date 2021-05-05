@@ -4,4 +4,31 @@
     <string name="subHeadingText">PLACES TO GO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="destinationNameList">
+        <item>Melbourne</item>
+        <item>Brisbane</item>
+        <item>Tokyo</item>
+        <item>London</item>
+        <item>Colombo</item>
+        <item>New York</item>
+    </string-array>
+
+    <string-array name="destinationDescriptionList">
+        <item>Visit Melbourne Now!</item>
+        <item>Visit Brisbane Now!</item>
+        <item>Visit Tokyo Now!</item>
+        <item>Visit London Now!</item>
+        <item>Visit Colombo Now!</item>
+        <item>Visit New York Now!</item>
+    </string-array>
+
+    <string-array name="imageResStringList">
+        <item>melbourne</item>
+        <item>brisbane</item>
+        <item>tokyo</item>
+        <item>london</item>
+        <item>colombo</item>
+        <item>newyork</item>
+    </string-array>
 </resources>

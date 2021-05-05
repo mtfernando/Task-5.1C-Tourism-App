@@ -16,25 +16,9 @@ public class MainActivity extends AppCompatActivity {
     HorizontalRecyclerViewAdapter horizontalRecyclerViewAdapter;
     List<Destination> destinationList = new ArrayList<>();
 
-    String[] destinationNameList = {"Melbourne","Brisbane","Tokyo","London", "Colombo", "New York"};
-
-    String[] destinationDescriptionList = {
-            "Visit Melbourne now!",
-            "Visit Brisbane now!",
-            "Visit Tokyo now!",
-            "Visit London now!",
-            "Visit Colombo now!",
-            "Visit New York now!"
-    };
-
-    String[] imageResStringList = {
-            "melbourne",
-            "brisbane",
-            "tokyo",
-            "london",
-            "colombo",
-            "newyork"
-    };
+    String[] destinationNameList;
+    String[] destinationDescriptionList;
+    String[] imageResStringList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         PACKAGE_NAME = getApplicationContext().getPackageName();
+
+        destinationNameList = getResources().getStringArray(R.array.destinationNameList);
+        destinationDescriptionList = getResources().getStringArray(R.array.destinationDescriptionList);
+        imageResStringList= getResources().getStringArray(R.array.imageResStringList);
 
         for(int i=0; i<destinationNameList.length; i++){
             Destination destination = new Destination(imageResStringList[i], destinationNameList[i], destinationDescriptionList[i]);
