@@ -56,6 +56,7 @@ public class VerticalRecyclerViewAdapter extends RecyclerView.Adapter<VerticalRe
                 bundle.putString("image", destinationObject.getImageRes());
                 bundle.putString("header", destinationObject.getHeader());
                 bundle.putString("desc", destinationObject.getDesc());
+                System.out.println(destinationObject.getDesc());
 
                 destinationIntent.putExtras(bundle);
 

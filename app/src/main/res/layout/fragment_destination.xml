@@ -22,7 +22,7 @@
             android:layout_marginTop="50dp" />
 
         <TextView
-            android:id="@+id/headingTextView"
+            android:id="@+id/fragmentHeadingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -36,7 +36,7 @@
 
 
         <TextView
-            android:id="@+id/subHeadingTextView"
+            android:id="@+id/fragmentSubHeadingTextView"
             android:layout_width="350dp"
             android:gravity="center"
             android:layout_height="wrap_content"

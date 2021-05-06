@@ -24,15 +24,15 @@ public class DestinationFragment extends Fragment {
 
         //Assigning fragment layout views to local variables.
         image = view.findViewById(R.id.destinationImageView);
-        header = view.findViewById(R.id.headingTextView);
-        desc = view.findViewById(R.id.descTextView);
+        header = view.findViewById(R.id.fragmentHeadingTextView);
+        desc = view.findViewById(R.id.fragmentSubHeadingTextView);
 
         if(getArguments()!=null){
             imageStr = getArguments().getString("image");
             image.setImageResource(view.getResources().getIdentifier("drawable/" + imageStr, null, getActivity().getApplicationContext().getPackageName()));
 
             header.setText(getArguments().getString("header"));
-            header.setText(getArguments().getString("desc"));
+            desc.setText(getArguments().getString("desc"));
         }
 
         return view;

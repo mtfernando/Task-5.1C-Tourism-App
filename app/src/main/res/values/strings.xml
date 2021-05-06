@@ -2,8 +2,6 @@
     <string name="app_name">Task 5.1C Tourism App</string>
     <string name="headingText">TOP DESTINATIONS</string>
     <string name="subHeadingText">PLACES TO GO</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="destinationNameList">
         <item>Melbourne</item>
